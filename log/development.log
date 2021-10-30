@@ -33,3 +33,166 @@ Entrypoint application = js/application-e421b4aa3f716bebdab1.js js/application-e
 Completed 200 OK in 2835ms (Views: 2833.6ms | Allocations: 18680)
 
 
+  [1m[35m (51.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (35.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT GET_LOCK('4978512331109723490', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to DeviseCreateUsers (20211030165829)
+  [1m[35m (37.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (37.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (36.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20211030165829')[0m
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-10-30 17:00:15.691482', '2021-10-30 17:00:15.691482')[0m
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('4978512331109723490')[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2021-10-30 22:33:53 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 18ms (ActiveRecord: 0.0ms | Allocations: 2469)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-30 22:33:53 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 2.7ms | Allocations: 610)
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 20.0ms | Allocations: 3587)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 19119)
+Completed 200 OK in 98ms (Views: 78.4ms | ActiveRecord: 1.6ms | Allocations: 27023)
+
+
+Started GET "/" for ::1 at 2021-10-30 22:36:08 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 233)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-30 22:36:08 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 528)
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1879)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 5091)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 6960)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-30 22:38:19 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 528)
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1879)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 5068)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 6928)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-10-30 22:38:21 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 222)
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 141)
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1868)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 4820)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 6654)
+
+
+Started POST "/users" for ::1 at 2021-10-30 22:39:33 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"niyanta150792@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'niyanta150792@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('niyanta150792@gmail.com', '$2a$12$Lmpc7zrDTc5oEBf4ocS9.uoMpIX.Jbtq38p31dRRgxwjCjXS7Bb0e', '2021-10-30 17:09:33.810121', '2021-10-30 17:09:33.810121')[0m
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 365ms (ActiveRecord: 8.8ms | Allocations: 10998)
+
+
+Started GET "/" for ::1 at 2021-10-30 22:39:33 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3158)
+Completed 200 OK in 21ms (Views: 7.4ms | ActiveRecord: 0.6ms | Allocations: 5310)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-10-30 22:39:36 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 1.0ms | Allocations: 2210)
+
+
+Started GET "/" for ::1 at 2021-10-30 22:39:36 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 229)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-30 22:39:36 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 152)
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1020)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4014)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 4611)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-10-30 22:39:43 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"niyanta150792@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'niyanta150792@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 321ms (ActiveRecord: 0.7ms | Allocations: 2789)
+
+
+Started GET "/" for ::1 at 2021-10-30 22:39:44 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 70)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3047)
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.4ms | Allocations: 4544)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-10-30 22:39:46 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 1.0ms | Allocations: 1692)
+
+
+Started GET "/" for ::1 at 2021-10-30 22:39:46 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 229)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-30 22:39:46 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 152)
+  Rendered /home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1009)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3998)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 4589)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
