@@ -1,5 +1,5 @@
 Rails - 6.1.4
-Ruby - 2.5.1
+Ruby - 2.7.2
 Front end - Bootstrap
 Authentication - Devise
 
