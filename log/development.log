@@ -7,3 +7,29 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 37ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 4142)
 
 
+Started GET "/" for ::1 at 2021-10-30 19:57:28 +0530
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 127)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/niyanta/ror_udemy_course/finance-tracker/public/packs
+[Webpacker] Hash: e2a8a876c5815bee1e21
+Version: webpack 4.46.0
+Time: 1495ms
+Built at: 30/10/2021 7:57:31 pm
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e421b4aa3f716bebdab1.js    125 KiB  application  [emitted] [immutable]  application
+js/application-e421b4aa3f716bebdab1.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e421b4aa3f716bebdab1.js js/application-e421b4aa3f716bebdab1.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2832.0ms | Allocations: 17490)
+Completed 200 OK in 2835ms (Views: 2833.6ms | Allocations: 18680)
+
+
