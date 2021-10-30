@@ -677,3 +677,26 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 4909)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('4978512331109723490', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateStocks (20211030183403)
+  [1m[35m (32.7ms)[0m  [1m[35mCREATE TABLE `stocks` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `ticker` varchar(255), `name` varchar(255), `last_price` decimal, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20211030183403')[0m
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('4978512331109723490')[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStock Create (0.5ms)[0m  [1m[32mINSERT INTO `stocks` (`ticker`, `name`, `last_price`, `created_at`, `updated_at`) VALUES ('GOOG', 'Alphabet', 3102, '2021-10-30 18:35:52.801692', '2021-10-30 18:35:52.801692')[0m
+  [1m[36mTRANSACTION (17.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` /* loading for inspect */ LIMIT 11[0m
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks`[0m
+  [1m[36mStock Load (0.9ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` ORDER BY `stocks`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` WHERE `stocks`.`id` = 1 LIMIT 1[0m
+  [1m[36mStock Load (0.9ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` WHERE `stocks`.`id` = 1 LIMIT 1[0m
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` WHERE `stocks`.`id` = 1 LIMIT 1[0m
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` WHERE `stocks`.`id` = 1 LIMIT 1[0m
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` ORDER BY `stocks`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` ORDER BY `stocks`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.9ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` ORDER BY `stocks`.`id` ASC LIMIT 1[0m
