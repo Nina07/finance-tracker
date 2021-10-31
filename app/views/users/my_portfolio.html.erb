@@ -18,4 +18,9 @@
   <div id="results">
   </div>
 </div>
+  
+<% if @tracked_stocks.present? %>
+  <%= render 'stocks/stock_listing' %>
+<% end %>
+
 

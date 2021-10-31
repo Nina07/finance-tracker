@@ -1276,3 +1276,1314 @@ Processing by UsersController#my_portfolio as HTML
 Completed 200 OK in 18ms (Views: 10.5ms | ActiveRecord: 0.8ms | Allocations: 5803)
 
 
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT GET_LOCK('4978512331109723490', 0)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUserStocks (20211031095919)
+  [1m[35m (56.6ms)[0m  [1m[35mCREATE TABLE `user_stocks` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `stock_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_user_stocks_on_user_id` (`user_id`), INDEX `index_user_stocks_on_stock_id` (`stock_id`), CONSTRAINT `fk_rails_15a036aef2`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_62699afff5`
+FOREIGN KEY (`stock_id`)
+  REFERENCES `stocks` (`id`)
+)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20211031095919')[0m
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('4978512331109723490')[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/my_portfolio" for ::1 at 2021-10-31 15:34:23 +0530
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 1.5ms | Allocations: 508)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 112)
+  Rendered layouts/_messages.html.erb (Duration: 0.6ms | Allocations: 184)
+  Rendered layout layouts/application.html.erb (Duration: 327.3ms | Allocations: 70903)
+Completed 200 OK in 357ms (Views: 330.4ms | ActiveRecord: 1.8ms | Allocations: 79749)
+
+
+Started GET "/" for ::1 at 2021-10-31 15:34:35 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 138)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4352)
+Completed 200 OK in 20ms (Views: 14.3ms | ActiveRecord: 0.5ms | Allocations: 6535)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-10-31 15:34:36 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.4ms | Allocations: 4750)
+
+
+Started GET "/" for ::1 at 2021-10-31 15:34:36 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 243)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-31 15:34:36 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 659)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 2762)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 7008)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.0ms | Allocations: 8860)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-10-31 15:34:49 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 129)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1440)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 5638)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 7073)
+
+
+Started POST "/users" for ::1 at 2021-10-31 15:34:59 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"yash@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'yash@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('yash@example.com', '$2a$12$gz6ZoyA.NjgTx8e.c6rOD.y.zrCTx1xfxOPzDYu6zdw8Io2z5hfxa', '2021-10-31 10:04:59.442631', '2021-10-31 10:04:59.442631')[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 381ms (ActiveRecord: 6.0ms | Allocations: 8045)
+
+
+Started GET "/" for ::1 at 2021-10-31 15:34:59 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4262)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 5765)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-10-31 15:35:02 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms | Allocations: 1720)
+
+
+Started GET "/" for ::1 at 2021-10-31 15:35:02 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 229)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-31 15:35:02 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 146)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 989)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 5230)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 5825)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-10-31 15:35:12 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 966)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 5779)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.0ms | Allocations: 6308)
+
+
+Started POST "/users" for ::1 at 2021-10-31 15:35:21 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"nav@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'nav@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('nav@example.com', '$2a$12$S2uwhKiUetu1YkgmaUfx6u7rFkIV4JDnAY2DlDNi8EunG8tLaLDlm', '2021-10-31 10:05:21.490403', '2021-10-31 10:05:21.490403')[0m
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 366ms (ActiveRecord: 9.1ms | Allocations: 5665)
+
+
+Started GET "/" for ::1 at 2021-10-31 15:35:21 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4254)
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 0.5ms | Allocations: 5756)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-10-31 15:35:24 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.4ms | Allocations: 1719)
+
+
+Started GET "/" for ::1 at 2021-10-31 15:35:24 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 229)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-31 15:35:24 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 146)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 982)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 5220)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 5815)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-10-31 15:35:36 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 967)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 5776)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 6303)
+
+
+Started POST "/users" for ::1 at 2021-10-31 15:35:45 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"nino@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'nino@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('nino@example.com', '$2a$12$zwR1j/fAgQfm6jr0RPBRPOlib025a1pGjhwt2GBCeIeOLqZ7PPfxW', '2021-10-31 10:05:45.968511', '2021-10-31 10:05:45.968511')[0m
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 372ms (ActiveRecord: 6.2ms | Allocations: 5661)
+
+
+Started GET "/" for ::1 at 2021-10-31 15:35:45 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4254)
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 0.5ms | Allocations: 5756)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mStock Load (0.9ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks`[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStock Create (0.5ms)[0m  [1m[32mINSERT INTO `stocks` (`ticker`, `name`, `created_at`, `updated_at`) VALUES ('AAPL', 'Apple Inc', '2021-10-31 10:07:52.646698', '2021-10-31 10:07:52.646698')[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStock Create (1.0ms)[0m  [1m[32mINSERT INTO `stocks` (`ticker`, `name`, `created_at`, `updated_at`) VALUES ('AMZN', 'Amazon', '2021-10-31 10:08:10.767510', '2021-10-31 10:08:10.767510')[0m
+  [1m[36mTRANSACTION (19.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` ORDER BY `stocks`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` ORDER BY `stocks`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` ORDER BY `stocks`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` ORDER BY `stocks`.`id` ASC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserStock Create (0.4ms)[0m  [1m[32mINSERT INTO `user_stocks` (`user_id`, `stock_id`, `created_at`, `updated_at`) VALUES (1, 1, '2021-10-31 10:11:36.096984', '2021-10-31 10:11:36.096984')[0m
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  [1m[36mUserStock Load (0.7ms)[0m  [1m[34mSELECT `user_stocks`.* FROM `user_stocks`[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` ORDER BY `stocks`.`id` DESC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserStock Create (0.4ms)[0m  [1m[32mINSERT INTO `user_stocks` (`user_id`, `stock_id`, `created_at`, `updated_at`) VALUES (1, 3, '2021-10-31 10:12:13.417855', '2021-10-31 10:12:13.417855')[0m
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  [1m[36mUserStock Load (0.8ms)[0m  [1m[34mSELECT `user_stocks`.* FROM `user_stocks`[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  [1m[36mStock Load (0.9ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` ORDER BY `stocks`.`id` DESC LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserStock Create (0.8ms)[0m  [1m[32mINSERT INTO `user_stocks` (`user_id`, `stock_id`, `created_at`, `updated_at`) VALUES (4, 3, '2021-10-31 10:13:14.655417', '2021-10-31 10:13:14.655417')[0m
+  [1m[36mTRANSACTION (17.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_stocks` ON `users`.`id` = `user_stocks`.`user_id` WHERE `user_stocks`.`stock_id` = 3[0m
+  [1m[36mUserStock Load (0.8ms)[0m  [1m[34mSELECT `user_stocks`.* FROM `user_stocks`[0m
+Started GET "/" for ::1 at 2021-10-31 15:52:05 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 134)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 110)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 5044)
+Completed 200 OK in 33ms (Views: 19.6ms | ActiveRecord: 0.6ms | Allocations: 11825)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 15:52:09 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 1.4ms | Allocations: 382)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4598)
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 0.5ms | Allocations: 6763)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 15:53:24 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 0.7ms | Allocations: 146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 358.2ms | Allocations: 32771)
+Completed 200 OK in 363ms (Views: 358.8ms | ActiveRecord: 0.5ms | Allocations: 34265)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 15:54:39 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 2.1ms | Allocations: 386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 107)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 5317)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 0.4ms | Allocations: 7699)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 15:55:51 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 3.5ms | Allocations: 376)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 107)
+  Rendered layouts/_messages.html.erb (Duration: 1.3ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | Allocations: 5303)
+Completed 200 OK in 50ms (Views: 36.7ms | ActiveRecord: 1.0ms | Allocations: 7692)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:00:34 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1213)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 1310)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.9ms | Allocations: 11956)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>My portfolio</h1>
+
+<div class="search-area">
+  <h3>Search Stock</h3>
+  <%= form_tag search_stock_path, remote: true, method: :get do %>
+    <div class="form group row">
+      <div class="col-sm-9 no-right-padding">
+        <%= text_field_tag :stock, params[:stock], placeholder: "Enter the stock symbol", autofocus: true, class: "form-control form-control-lg" %>
+      </div>
+
+      <div class="col-sm-3 no-left-padding">
+        <%= button_tag type: :submit, class: "btn btn-success" do %>
+          <%= fa_icon 'search 2x' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <div id="results">
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-9">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Ticker</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tracked_stocks.each do |stock| %>
+            <tr>
+              <th scope="row"><%= stock.ticker %></th>
+              <td><%= stock.name %></td>
+              <td><%= stock.last_price %></td>
+              <td><%= 'Action placeholder' %></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+):
+1:    <h1>My portfolio</h1>
+2:    
+3:    <div class="search-area">
+4:      <h3>Search Stock</h3>
+5:      <%= form_tag search_stock_path, remote: true, method: :get do %>
+6:        <div class="form group row">
+7:          <div class="col-sm-9 no-right-padding">
+8:            <%= text_field_tag :stock, params[:stock], placeholder: "Enter the stock symbol", autofocus: true, class: "form-control form-control-lg" %>
+9:          </div>
+10:    
+11:          <div class="col-sm-3 no-left-padding">
+12:            <%= button_tag type: :submit, class: "btn btn-success" do %>
+13:              <%= fa_icon 'search 2x' %>
+14:            <% end %>
+15:          </div>
+16:        </div>
+17:      <% end %>
+18:      <div id="results">
+19:      </div>
+20:      
+21:      <div class="row">
+22:        <div class="col-sm-9">
+23:          <table class="table table-bordered table-hover">
+24:            <thead>
+25:              <tr>
+26:                <th scope="col">Ticker</th>
+27:                <th scope="col">Name</th>
+28:                <th scope="col">Price</th>
+29:                <th scope="col">Actions</th>
+30:              </tr>
+31:            </thead>
+32:            <tbody>
+33:              <% @tracked_stocks.each do |stock| %>
+34:                <tr>
+35:                  <th scope="row"><%= stock.ticker %></th>
+36:                  <td><%= stock.name %></td>
+37:                  <td><%= stock.last_price %></td>
+38:                  <td><%= 'Action placeholder' %></td>
+39:                </tr>
+40:            </tbody>
+41:          </table>
+42:        </div>
+43:      </div>
+44:    </div>
+  
+app/views/users/my_portfolio.html.erb:48: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/my_portfolio.html.erb:48: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/my_portfolio.html.erb:48: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/my_portfolio.html.erb:48: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/my_portfolio.html.erb:48: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/my_portfolio.html.erb:48: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:00:55 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 4[0m
+  ↳ app/views/users/my_portfolio.html.erb:33
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 22.1ms | Allocations: 7460)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 107)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 180)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 12427)
+Completed 200 OK in 52ms (Views: 35.3ms | ActiveRecord: 3.8ms | Allocations: 15140)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.9ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 4[0m
+Started GET "/" for ::1 at 2021-10-31 16:02:53 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 135)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 4308)
+Completed 200 OK in 19ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 6472)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-10-31 16:02:54 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 1.4ms | Allocations: 2116)
+
+
+Started GET "/" for ::1 at 2021-10-31 16:02:54 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 240)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-31 16:02:54 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.4ms | Allocations: 581)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1957)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 6201)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.0ms | Allocations: 7910)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-10-31 16:03:00 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"yash@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'yash@example.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 439ms (ActiveRecord: 0.8ms | Allocations: 3603)
+
+
+Started GET "/" for ::1 at 2021-10-31 16:03:00 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4265)
+Completed 200 OK in 20ms (Views: 12.9ms | ActiveRecord: 0.6ms | Allocations: 5765)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:03:07 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 2[0m
+  ↳ app/views/users/my_portfolio.html.erb:33
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1070)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 5283)
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 1.1ms | Allocations: 6848)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:03:58 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 2[0m
+  ↳ app/views/users/my_portfolio.html.erb:21
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1439)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 107)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 6373)
+Completed 200 OK in 23ms (Views: 17.6ms | ActiveRecord: 1.0ms | Allocations: 8834)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:04:38 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 2[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1428)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 107)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 6362)
+Completed 200 OK in 32ms (Views: 19.5ms | ActiveRecord: 1.9ms | Allocations: 8822)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:06:19 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 2[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1320)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 107)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 6247)
+Completed 200 OK in 39ms (Views: 26.2ms | ActiveRecord: 1.5ms | Allocations: 8700)
+
+
+Started GET "/" for ::1 at 2021-10-31 16:06:32 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4342)
+Completed 200 OK in 21ms (Views: 13.6ms | ActiveRecord: 0.5ms | Allocations: 6503)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-10-31 16:06:34 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 1.3ms | Allocations: 1715)
+
+
+Started GET "/" for ::1 at 2021-10-31 16:06:34 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 230)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-31 16:06:34 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 567)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1892)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 6136)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.0ms | Allocations: 7824)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-10-31 16:06:40 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"niyanta150792@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'niyanta150792@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 378ms (ActiveRecord: 0.7ms | Allocations: 3477)
+
+
+Started GET "/" for ::1 at 2021-10-31 16:06:40 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 27)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4270)
+Completed 200 OK in 21ms (Views: 11.1ms | ActiveRecord: 0.5ms | Allocations: 5771)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:06:45 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2584)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2680)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.3ms | Allocations: 4221)
+
+
+  
+ActionView::Template::Error (Missing partial stocks/_stock_listings with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/niyanta/ror_udemy_course/finance-tracker/app/views"
+  * "/home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-bootstrap-views-1.1.0/app/views"
+  * "/home/niyanta/.rvm/gems/ruby-2.7.2/gems/devise-4.8.0/app/views"
+  * "/home/niyanta/.rvm/gems/ruby-2.7.2/gems/actiontext-6.1.4.1/app/views"
+  * "/home/niyanta/.rvm/gems/ruby-2.7.2/gems/actionmailbox-6.1.4.1/app/views"
+):
+    20: </div>
+    21:   
+    22: <% if @tracked_stocks.present? %>
+    23:   <%= render 'stocks/stock_listings' %>
+    24: <% end %>
+  
+app/views/users/my_portfolio.html.erb:23
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:07:04 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered stocks/_stock_listing.html.erb (Duration: 0.7ms | Allocations: 211)
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1773)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 106)
+  Rendered layouts/_messages.html.erb (Duration: 0.6ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 6706)
+Completed 200 OK in 32ms (Views: 20.4ms | ActiveRecord: 1.6ms | Allocations: 9166)
+
+
+Started GET "/search_stock?stock=AAPL&button=" for ::1 at 2021-10-31 16:07:20 +0530
+Processing by StocksController#search as JS
+  Parameters: {"stock"=>"AAPL", "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+DEPRECATION WARNING: Rendering actions with '.' in the name is deprecated: users/_result.html (called from _app_views_users__result_js_erb__426887689448738396_32840 at /home/niyanta/ror_udemy_course/finance-tracker/app/views/users/_result.js.erb:1)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered users/_result.html.erb (Duration: 2.6ms | Allocations: 390)
+  Rendered users/_result.js.erb (Duration: 7.0ms | Allocations: 928)
+Completed 200 OK in 2526ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 5370)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:08:03 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered stocks/_stock_listing.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1205)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 341.3ms | Allocations: 33464)
+Completed 200 OK in 348ms (Views: 341.5ms | ActiveRecord: 1.1ms | Allocations: 35029)
+
+
+Started GET "/search_stock?stock=MSFT&button=" for ::1 at 2021-10-31 16:08:09 +0530
+Processing by StocksController#search as JS
+  Parameters: {"stock"=>"MSFT", "button"=>""}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered users/_result.html.erb (Duration: 1.1ms | Allocations: 121)
+  Rendered users/_result.js.erb (Duration: 2.1ms | Allocations: 241)
+Completed 200 OK in 2472ms (Views: 3.1ms | ActiveRecord: 0.9ms | Allocations: 3882)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:08:41 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered stocks/_stock_listing.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1199)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 388.9ms | Allocations: 33902)
+Completed 200 OK in 395ms (Views: 389.2ms | ActiveRecord: 1.0ms | Allocations: 35466)
+
+
+Started GET "/search_stock?stock=MSFT&button=" for ::1 at 2021-10-31 16:08:43 +0530
+Processing by StocksController#search as JS
+  Parameters: {"stock"=>"MSFT", "button"=>""}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered users/_result.html.erb (Duration: 0.9ms | Allocations: 121)
+  Rendered users/_result.js.erb (Duration: 1.5ms | Allocations: 241)
+Completed 200 OK in 2441ms (Views: 2.4ms | ActiveRecord: 0.7ms | Allocations: 3889)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:13:59 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered stocks/_stock_listing.html.erb (Duration: 2.0ms | Allocations: 204)
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 13.1ms | Allocations: 1765)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.8ms | Allocations: 213)
+  Rendered layouts/_messages.html.erb (Duration: 0.9ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 6800)
+Completed 200 OK in 46ms (Views: 38.1ms | ActiveRecord: 1.2ms | Allocations: 9259)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:14:50 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered stocks/_stock_listing.html.erb (Duration: 0.6ms | Allocations: 204)
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1763)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 207)
+  Rendered layouts/_messages.html.erb (Duration: 1.4ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 437.4ms | Allocations: 35300)
+Completed 200 OK in 446ms (Views: 439.5ms | ActiveRecord: 1.0ms | Allocations: 37760)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-10-31 16:15:00 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 0.9ms | Allocations: 1717)
+
+
+Started GET "/" for ::1 at 2021-10-31 16:15:00 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 229)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-31 16:15:00 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.3ms | Allocations: 567)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1892)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 58)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 6189)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 7877)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-31 16:15:46 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.5ms | Allocations: 567)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 1172)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 7509)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms | Allocations: 9379)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <%= link_to 'FinanceTracker', root_path, class: 'navbar-brand' %>
+    <% if current_user %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-xs btn-danger logout-button"%>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+):
+1:    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+2:      <div class="container">
+3:        <%= link_to 'FinanceTracker', root_path, class: 'navbar-brand' %>
+4:        <% if current_user %>
+5:          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+6:            <span class="navbar-toggler-icon"></span>
+7:          </button>
+8:    
+9:          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+10:            <ul class="navbar-nav mr-auto">
+11:              <li class="nav-item active">
+12:                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+13:              </li>
+14:              <li class="nav-item">
+15:                <a class="nav-link" href="#">Link</a>
+16:              </li>
+17:              <li class="nav-item dropdown">
+18:                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+19:                  Dropdown
+20:                </a>
+21:                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+22:                  <a class="dropdown-item" href="#">Action</a>
+23:                  <a class="dropdown-item" href="#">Another action</a>
+24:                  <div class="dropdown-divider"></div>
+25:                  <a class="dropdown-item" href="#">Something else here</a>
+26:                </div>
+27:              </li>
+28:              <li class="nav-item">
+29:                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+30:              </li>
+31:            </ul>
+32:            <ul class="navbar-nav ml-auto">
+33:              <li class="nav-item">
+34:                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-xs btn-danger logout-button"%>
+35:              </li>
+36:            </ul>
+37:            <form class="form-inline my-2 my-lg-0">
+38:              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+39:              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+40:            </form>
+41:          </div>
+42:        </div>
+43:      </div>
+44:    </nav>
+  
+app/views/layouts/_navbar.html.erb:46: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_navbar.html.erb:46: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_navbar.html.erb:46: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_navbar.html.erb:46: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_navbar.html.erb:46: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_navbar.html.erb:46: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:14
+Started GET "/users/sign_in" for ::1 at 2021-10-31 16:17:39 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 567)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1889)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 253)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 6995)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.0ms | Allocations: 8904)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-31 16:17:44 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 567)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 251)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 6980)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 8877)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-10-31 16:17:51 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"niyanta150792@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'niyanta150792@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 361ms (ActiveRecord: 0.8ms | Allocations: 3477)
+
+
+Started GET "/" for ::1 at 2021-10-31 16:17:51 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 67)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 27)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4412)
+Completed 200 OK in 20ms (Views: 13.8ms | ActiveRecord: 0.5ms | Allocations: 6578)
+
+
+Started GET "/" for ::1 at 2021-10-31 16:19:29 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 3.8ms | Allocations: 1238)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 5795)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.5ms | Allocations: 8149)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <%= link_to 'FinanceTracker', root_path, class: 'navbar-brand' %>
+    <% if current_user %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to 'My Portfolio', my_portfolio_path, class: 'nav-link'
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-xs btn-danger logout-button"%>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    <% end %>
+  
+  </div>
+</nav>
+):
+1:    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+2:      <div class="container">
+3:        <%= link_to 'FinanceTracker', root_path, class: 'navbar-brand' %>
+4:        <% if current_user %>
+5:          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+6:            <span class="navbar-toggler-icon"></span>
+7:          </button>
+8:    
+9:          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+10:            <ul class="navbar-nav mr-auto">
+11:              <li class="nav-item active">
+12:                <%= link_to 'My Portfolio', my_portfolio_path, class: 'nav-link'
+13:              </li>
+14:              <li class="nav-item">
+15:                <a class="nav-link" href="#">Link</a>
+16:              </li>
+17:              <li class="nav-item dropdown">
+18:                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+19:                  Dropdown
+20:                </a>
+21:                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+22:                  <a class="dropdown-item" href="#">Action</a>
+23:                  <a class="dropdown-item" href="#">Another action</a>
+24:                  <div class="dropdown-divider"></div>
+25:                  <a class="dropdown-item" href="#">Something else here</a>
+26:                </div>
+27:              </li>
+28:              <li class="nav-item">
+29:                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+30:              </li>
+31:            </ul>
+32:            <ul class="navbar-nav ml-auto">
+33:              <li class="nav-item">
+34:                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-xs btn-danger logout-button"%>
+35:              </li>
+36:            </ul>
+37:            <form class="form-inline my-2 my-lg-0">
+38:              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+39:              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+40:            </form>
+41:          </div>
+42:        <% end %>
+43:      
+44:      </div>
+45:    </nav>
+  
+app/views/layouts/_navbar.html.erb:13: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:15: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:16: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:20: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:22: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:23: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:25: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:26: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:27: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:28: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:30: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:31: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:35: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:35: unmatched close parenthesis: /ul>
+app/views/layouts/_navbar.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:39: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:41: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:44: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:45: unknown regexp options - av
+app/views/layouts/_navbar.html.erb:47: unterminated string meets end of file
+app/views/layouts/_navbar.html.erb:47: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/_navbar.html.erb:13: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:15: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:16: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:20: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:22: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:23: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:25: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:26: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:27: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:28: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:30: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:31: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:35: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:35: unmatched close parenthesis: /ul>
+app/views/layouts/_navbar.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:39: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:41: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:44: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:45: unknown regexp options - av
+app/views/layouts/_navbar.html.erb:47: unterminated string meets end of file
+app/views/layouts/_navbar.html.erb:47: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/_navbar.html.erb:13: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:15: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:16: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:20: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:22: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:23: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:25: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:26: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:27: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:28: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:30: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:31: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:35: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:35: unmatched close parenthesis: /ul>
+app/views/layouts/_navbar.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:39: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:41: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:44: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:45: unknown regexp options - av
+app/views/layouts/_navbar.html.erb:47: unterminated string meets end of file
+app/views/layouts/_navbar.html.erb:47: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/_navbar.html.erb:13: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:15: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:16: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:20: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:22: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:23: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:25: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:26: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:27: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:28: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:30: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:31: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:35: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:35: unmatched close parenthesis: /ul>
+app/views/layouts/_navbar.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:39: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:41: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:44: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:45: unknown regexp options - av
+app/views/layouts/_navbar.html.erb:47: unterminated string meets end of file
+app/views/layouts/_navbar.html.erb:47: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/_navbar.html.erb:13: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:15: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:16: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:20: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:22: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:23: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:25: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:26: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:27: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:28: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:30: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:31: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:35: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:35: unmatched close parenthesis: /ul>
+app/views/layouts/_navbar.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:39: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:41: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:44: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:45: unknown regexp options - av
+app/views/layouts/_navbar.html.erb:47: unterminated string meets end of file
+app/views/layouts/_navbar.html.erb:47: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/_navbar.html.erb:13: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:15: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:16: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:20: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:22: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:23: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:25: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:26: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:27: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:28: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:30: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:31: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:35: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:35: unmatched close parenthesis: /ul>
+app/views/layouts/_navbar.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:39: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:41: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:44: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:45: unknown regexp options - av
+app/views/layouts/_navbar.html.erb:47: unterminated string meets end of file
+app/views/layouts/_navbar.html.erb:47: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2021-10-31 16:20:00 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 296)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 5251)
+Completed 200 OK in 26ms (Views: 19.4ms | ActiveRecord: 0.5ms | Allocations: 7639)
+
+
+Started GET "/" for ::1 at 2021-10-31 16:21:26 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 319)
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 5277)
+Completed 200 OK in 24ms (Views: 17.6ms | ActiveRecord: 0.4ms | Allocations: 7666)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-10-31 16:21:28 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (1.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered stocks/_stock_listing.html.erb (Duration: 1.9ms | Allocations: 204)
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 17.9ms | Allocations: 1760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 49.9ms | Allocations: 6660)
+Completed 200 OK in 67ms (Views: 53.3ms | ActiveRecord: 2.5ms | Allocations: 8894)
+
+
+Started GET "/" for ::1 at 2021-10-31 16:21:33 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 100)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4350)
+Completed 200 OK in 19ms (Views: 12.6ms | ActiveRecord: 0.5ms | Allocations: 5848)
+
+
