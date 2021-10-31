@@ -52,4 +52,6 @@ production:
   <<: *default
   database: finance_tracker_production
   username: finance_tracker
+  adapter: postgresql
+  encoding: unicode
   password: <%= ENV['FINANCE_TRACKER_DATABASE_PASSWORD'] %>
