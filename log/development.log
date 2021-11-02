@@ -2935,3 +2935,470 @@ Processing by StocksController#search as JS
 Completed 200 OK in 2247ms (Views: 26.0ms | ActiveRecord: 8.8ms | Allocations: 6825)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('4978512331109723490', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddFirstLastNameToUser (20211102123848)
+  [1m[35m (107.6ms)[0m  [1m[35mALTER TABLE `users` ADD `first_name` varchar(255)[0m
+  [1m[35m (106.3ms)[0m  [1m[35mALTER TABLE `users` ADD `last_name` varchar(255)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20211102123848')[0m
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('4978512331109723490')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2021-11-02 18:17:39 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 265)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 403)
+  Rendered layouts/_messages.html.erb (Duration: 0.3ms | Allocations: 184)
+  Rendered layout layouts/application.html.erb (Duration: 283.9ms | Allocations: 45661)
+Completed 200 OK in 304ms (Views: 285.7ms | ActiveRecord: 1.3ms | Allocations: 55402)
+
+
+Started GET "/" for ::1 at 2021-11-02 18:17:49 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 385)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 5335)
+Completed 200 OK in 33ms (Views: 20.3ms | ActiveRecord: 0.9ms | Allocations: 7746)
+
+
+Started GET "/" for ::1 at 2021-11-02 18:23:47 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 27.4ms | Allocations: 7263)
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 11821)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.2ms | Allocations: 14319)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `edit_user_registrations_path' for #<ActionView::Base:0x0000000000afc8>
+Did you mean?  edit_user_registration_path
+               edit_user_registration_url
+               edit_registration_path):
+    19:               Profile
+    20:             </a>
+    21:             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    22:               <%= link_to "Edit profile", edit_user_registrations_path, class: "dropdown-item" %>
+    23:               <a class="dropdown-item" href="#">Another action</a>
+    24:               <div class="dropdown-divider"></div>
+    25:               <a class="dropdown-item" href="#">Something else here</a>
+  
+app/views/layouts/_navbar.html.erb:22
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2021-11-02 18:24:03 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 152)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 432)
+  Rendered layouts/_messages.html.erb (Duration: 0.3ms | Allocations: 180)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 5543)
+Completed 200 OK in 19ms (Views: 12.7ms | ActiveRecord: 0.5ms | Allocations: 8176)
+
+
+Started GET "/" for ::1 at 2021-11-02 18:25:59 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 1323)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 5881)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.1ms | Allocations: 8262)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <%= link_to 'FinanceTracker', root_path, class: 'navbar-brand' %>
+    <% if current_user %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item <%= 'active' if request.path == my_portfolio_path %>">
+            <%= link_to 'My Portfolio', my_portfolio_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Profile
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
+                <%= fa_icon 'edit %>Edit Profile
+              <% end %>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item user-name">
+            <%= fa_icon 'user' %> <%= current_user.full_name %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-xs btn-danger logout-button"%>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    <% end %>
+  
+  </div>
+</nav>
+):
+1:    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+2:      <div class="container">
+3:        <%= link_to 'FinanceTracker', root_path, class: 'navbar-brand' %>
+4:        <% if current_user %>
+5:          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+6:            <span class="navbar-toggler-icon"></span>
+7:          </button>
+8:    
+9:          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+10:            <ul class="navbar-nav mr-auto">
+11:              <li class="nav-item <%= 'active' if request.path == my_portfolio_path %>">
+12:                <%= link_to 'My Portfolio', my_portfolio_path, class: 'nav-link' %>
+13:              </li>
+14:              <li class="nav-item">
+15:                <a class="nav-link" href="#">Link</a>
+16:              </li>
+17:              <li class="nav-item dropdown">
+18:                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+19:                  Profile
+20:                </a>
+21:                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+22:                  <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
+23:                    <%= fa_icon 'edit %>Edit Profile
+24:                  <% end %>
+25:                  <a class="dropdown-item" href="#">Another action</a>
+26:                  <div class="dropdown-divider"></div>
+27:                  <a class="dropdown-item" href="#">Something else here</a>
+28:                </div>
+29:              </li>
+30:              <li class="nav-item">
+31:                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+32:              </li>
+33:            </ul>
+34:            <ul class="navbar-nav ml-auto">
+35:              <li class="nav-item user-name">
+36:                <%= fa_icon 'user' %> <%= current_user.full_name %>
+37:              </li>
+38:              <li class="nav-item">
+39:                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-xs btn-danger logout-button"%>
+40:              </li>
+41:            </ul>
+42:            <form class="form-inline my-2 my-lg-0">
+43:              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+44:              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+45:            </form>
+46:          </div>
+47:        <% end %>
+48:      
+49:      </div>
+50:    </nav>
+  
+app/views/layouts/_navbar.html.erb:23: syntax error, unexpected constant, expecting ')'
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected `class', expecting `do' or '{' or '('
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/layouts/_navbar.html.erb:26: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected `else', expecting ')'
+app/views/layouts/_navbar.html.erb:28: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:31: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:32: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:33: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:35: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:36: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:37: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:40: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:41: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:44: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:45: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:46: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:49: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:50: unknown regexp options - av
+app/views/layouts/_navbar.html.erb:52: unterminated string meets end of file
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/_navbar.html.erb:23: syntax error, unexpected constant, expecting ')'
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected `class', expecting `do' or '{' or '('
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/layouts/_navbar.html.erb:26: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected `else', expecting ')'
+app/views/layouts/_navbar.html.erb:28: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:31: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:32: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:33: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:35: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:36: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:37: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:40: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:41: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:44: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:45: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:46: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:49: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:50: unknown regexp options - av
+app/views/layouts/_navbar.html.erb:52: unterminated string meets end of file
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/_navbar.html.erb:23: syntax error, unexpected constant, expecting ')'
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected `class', expecting `do' or '{' or '('
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/layouts/_navbar.html.erb:26: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected `else', expecting ')'
+app/views/layouts/_navbar.html.erb:28: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:31: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:32: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:33: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:35: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:36: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:37: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:40: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:41: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:44: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:45: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:46: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:49: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:50: unknown regexp options - av
+app/views/layouts/_navbar.html.erb:52: unterminated string meets end of file
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/_navbar.html.erb:23: syntax error, unexpected constant, expecting ')'
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected `class', expecting `do' or '{' or '('
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/layouts/_navbar.html.erb:26: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected `else', expecting ')'
+app/views/layouts/_navbar.html.erb:28: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:31: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:32: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:33: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:35: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:36: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:37: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:40: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:41: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:44: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:45: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:46: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:49: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:50: unknown regexp options - av
+app/views/layouts/_navbar.html.erb:52: unterminated string meets end of file
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/_navbar.html.erb:23: syntax error, unexpected constant, expecting ')'
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected `class', expecting `do' or '{' or '('
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/layouts/_navbar.html.erb:26: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected `else', expecting ')'
+app/views/layouts/_navbar.html.erb:28: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:31: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:32: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:33: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:35: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:36: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:37: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:40: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:41: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:44: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:45: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:46: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:49: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:50: unknown regexp options - av
+app/views/layouts/_navbar.html.erb:52: unterminated string meets end of file
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/_navbar.html.erb:23: syntax error, unexpected constant, expecting ')'
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected `class', expecting `do' or '{' or '('
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/layouts/_navbar.html.erb:26: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected `else', expecting ')'
+app/views/layouts/_navbar.html.erb:28: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:31: unknown regexp option - a
+app/views/layouts/_navbar.html.erb:32: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:33: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:35: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:36: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_navbar.html.erb:37: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:40: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:41: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:44: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:45: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:46: unknown regexp options - dv
+app/views/layouts/_navbar.html.erb:49: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:50: unknown regexp options - av
+app/views/layouts/_navbar.html.erb:52: unterminated string meets end of file
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2021-11-02 18:27:18 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 511)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 5465)
+Completed 200 OK in 34ms (Views: 22.5ms | ActiveRecord: 0.9ms | Allocations: 7857)
+
+
+Started GET "/" for ::1 at 2021-11-02 18:27:25 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.8ms | Allocations: 506)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 5454)
+Completed 200 OK in 35ms (Views: 24.6ms | ActiveRecord: 0.8ms | Allocations: 7837)
+
+
+Started GET "/" for ::1 at 2021-11-02 18:31:14 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 505)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 5453)
+Completed 200 OK in 29ms (Views: 21.2ms | ActiveRecord: 0.5ms | Allocations: 7836)
+
+
+Started GET "/users/edit" for ::1 at 2021-11-02 18:31:16 +0530
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 12.1ms | Allocations: 5483)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 195)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 9845)
+Completed 200 OK in 29ms (Views: 24.7ms | ActiveRecord: 0.3ms | Allocations: 12756)
+
+
+Started GET "/users/edit" for ::1 at 2021-11-02 18:32:29 +0530
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2097)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 496)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 7416)
+Completed 200 OK in 35ms (Views: 25.3ms | ActiveRecord: 0.8ms | Allocations: 10285)
+
+
+Started GET "/" for ::1 at 2021-11-02 18:39:14 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 131)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 509)
+  Rendered layouts/_messages.html.erb (Duration: 0.3ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 5443)
+Completed 200 OK in 24ms (Views: 10.1ms | ActiveRecord: 0.5ms | Allocations: 13058)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-11-02 18:39:16 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms | Allocations: 2565)
+
+
+Started GET "/" for ::1 at 2021-11-02 18:39:16 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 249)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-11-02 18:39:16 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 661)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 71)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 6548)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 8274)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-11-02 18:39:18 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 129)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1856)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 71)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 6713)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 8041)
+
+
