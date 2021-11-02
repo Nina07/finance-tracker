@@ -2587,3 +2587,351 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 19ms (Views: 12.6ms | ActiveRecord: 0.5ms | Allocations: 5848)
 
 
+  [1m[36mUser Load (14.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+Started GET "/" for ::1 at 2021-11-02 16:31:29 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 265)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 331)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 184)
+  Rendered layout layouts/application.html.erb (Duration: 99.6ms | Allocations: 17144)
+Completed 200 OK in 119ms (Views: 101.9ms | ActiveRecord: 1.3ms | Allocations: 25990)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-11-02 16:32:10 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered stocks/_stock_listing.html.erb (Duration: 0.9ms | Allocations: 219)
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 25.3ms | Allocations: 7659)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 11895)
+Completed 200 OK in 50ms (Views: 29.1ms | ActiveRecord: 3.0ms | Allocations: 18990)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-11-02 16:47:43 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered stocks/_stock_listing.html.erb (Duration: 0.7ms | Allocations: 208)
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 12.1ms | Allocations: 5519)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 309)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 10580)
+Completed 200 OK in 38ms (Views: 21.8ms | ActiveRecord: 1.1ms | Allocations: 19792)
+
+
+Started GET "/search_stock?stock=TSLA&button=" for ::1 at 2021-11-02 16:47:47 +0530
+Processing by StocksController#search as JS
+  Parameters: {"stock"=>"TSLA", "button"=>""}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+DEPRECATION WARNING: Rendering actions with '.' in the name is deprecated: users/_result.html (called from _app_views_users__result_js_erb__3938403906223890231_25720 at /home/niyanta/ror_udemy_course/finance-tracker/app/views/users/_result.js.erb:1)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered users/_result.html.erb (Duration: 3.5ms | Allocations: 502)
+  Rendered users/_result.js.erb (Duration: 8.0ms | Allocations: 1052)
+Completed 200 OK in 7243ms (Views: 10.9ms | ActiveRecord: 0.6ms | Allocations: 5551)
+
+
+Started POST "/user_stocks?ticker=TSLA&user=1" for ::1 at 2021-11-02 16:48:02 +0530
+Processing by UserStocksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "ticker"=>"TSLA", "user"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms | Allocations: 4869)
+
+
+  
+NoMethodError (undefined method `check_db' for #<Class:0x000055dbf823a7d8>):
+  
+app/controllers/user_stocks_controller.rb:3:in `create'
+Started POST "/user_stocks?ticker=TSLA&user=1" for ::1 at 2021-11-02 16:48:15 +0530
+Processing by UserStocksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "ticker"=>"TSLA", "user"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` WHERE `stocks`.`ticker` = 'TSLA' ORDER BY `stocks`.`id` ASC LIMIT 1[0m
+  ↳ app/models/stock.rb:20:in `check_db'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.8ms | Allocations: 8748)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/user_stocks_controller.rb:4:in `create'
+Started POST "/user_stocks?ticker=TSLA&user=1" for ::1 at 2021-11-02 16:48:40 +0530
+Processing by UserStocksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "ticker"=>"TSLA", "user"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` WHERE `stocks`.`ticker` = 'TSLA' ORDER BY `stocks`.`id` ASC LIMIT 1[0m
+  ↳ app/models/stock.rb:20:in `check_db'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_stocks_controller.rb:6:in `create'
+  [1m[36mStock Create (5.6ms)[0m  [1m[32mINSERT INTO `stocks` (`ticker`, `name`, `last_price`, `created_at`, `updated_at`) VALUES ('TSLA', 'Tesla Inc', 1230, '2021-11-02 11:18:42.600980', '2021-11-02 11:18:42.600980')[0m
+  ↳ app/controllers/user_stocks_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_stocks_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_stocks_controller.rb:8:in `create'
+  [1m[36mUserStock Create (0.4ms)[0m  [1m[32mINSERT INTO `user_stocks` (`user_id`, `stock_id`, `created_at`, `updated_at`) VALUES (1, 4, '2021-11-02 11:18:42.632856', '2021-11-02 11:18:42.632856')[0m
+  ↳ app/controllers/user_stocks_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_stocks_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 2315ms (ActiveRecord: 19.3ms | Allocations: 23384)
+
+
+  
+NameError (undefined local variable or method `portfolio_path' for #<UserStocksController:0x0000000000fb90>):
+  
+app/controllers/user_stocks_controller.rb:10:in `create'
+Started POST "/user_stocks?ticker=TSLA&user=1" for ::1 at 2021-11-02 16:49:00 +0530
+Processing by UserStocksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "ticker"=>"TSLA", "user"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` WHERE `stocks`.`ticker` = 'TSLA' ORDER BY `stocks`.`id` ASC LIMIT 1[0m
+  ↳ app/models/stock.rb:20:in `check_db'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_stocks_controller.rb:8:in `create'
+  [1m[36mUserStock Create (0.4ms)[0m  [1m[32mINSERT INTO `user_stocks` (`user_id`, `stock_id`, `created_at`, `updated_at`) VALUES (1, 4, '2021-11-02 11:19:00.249041', '2021-11-02 11:19:00.249041')[0m
+  ↳ app/controllers/user_stocks_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_stocks_controller.rb:8:in `create'
+Redirected to http://localhost:3000/my_portfolio
+Completed 302 Found in 50ms (ActiveRecord: 11.7ms | Allocations: 15322)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-11-02 16:49:00 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered stocks/_stock_listing.html.erb (Duration: 0.3ms | Allocations: 40)
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2209)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 99)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 6571)
+Completed 200 OK in 18ms (Views: 11.9ms | ActiveRecord: 1.3ms | Allocations: 9099)
+
+
+Started GET "/search_stock?stock=MSFT&button=" for ::1 at 2021-11-02 16:49:23 +0530
+Processing by StocksController#search as JS
+  Parameters: {"stock"=>"MSFT", "button"=>""}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered users/_result.html.erb (Duration: 1.6ms | Allocations: 211)
+  Rendered users/_result.js.erb (Duration: 2.4ms | Allocations: 342)
+Completed 200 OK in 2305ms (Views: 4.4ms | ActiveRecord: 0.9ms | Allocations: 4128)
+
+
+Started POST "/user_stocks?ticker=MSFT&user=1" for ::1 at 2021-11-02 16:49:27 +0530
+Processing by UserStocksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "ticker"=>"MSFT", "user"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` WHERE `stocks`.`ticker` = 'MSFT' ORDER BY `stocks`.`id` ASC LIMIT 1[0m
+  ↳ app/models/stock.rb:20:in `check_db'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_stocks_controller.rb:6:in `create'
+  [1m[36mStock Create (0.8ms)[0m  [1m[32mINSERT INTO `stocks` (`ticker`, `name`, `last_price`, `created_at`, `updated_at`) VALUES ('MSFT', 'Microsoft Corporation', 344, '2021-11-02 11:19:30.249244', '2021-11-02 11:19:30.249244')[0m
+  ↳ app/controllers/user_stocks_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_stocks_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_stocks_controller.rb:8:in `create'
+  [1m[36mUserStock Create (0.8ms)[0m  [1m[32mINSERT INTO `user_stocks` (`user_id`, `stock_id`, `created_at`, `updated_at`) VALUES (1, 5, '2021-11-02 11:19:30.275627', '2021-11-02 11:19:30.275627')[0m
+  ↳ app/controllers/user_stocks_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_stocks_controller.rb:8:in `create'
+Redirected to http://localhost:3000/my_portfolio
+Completed 302 Found in 2302ms (ActiveRecord: 17.8ms | Allocations: 8649)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-11-02 16:49:30 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered stocks/_stock_listing.html.erb (Duration: 0.6ms | Allocations: 45)
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1257)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 5553)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 0.7ms | Allocations: 7127)
+
+
+Started GET "/my_portfolio" for ::1 at 2021-11-02 17:07:12 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered stocks/_stock_listing.html.erb (Duration: 0.6ms | Allocations: 231)
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 10.6ms | Allocations: 5580)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 309)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 10641)
+Completed 200 OK in 38ms (Views: 21.8ms | ActiveRecord: 1.0ms | Allocations: 19852)
+
+
+Started GET "/search_stock?stock=GOOG&button=" for ::1 at 2021-11-02 17:07:19 +0530
+Processing by StocksController#search as JS
+  Parameters: {"stock"=>"GOOG", "button"=>""}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+DEPRECATION WARNING: Rendering actions with '.' in the name is deprecated: users/_result.html (called from _app_views_users__result_js_erb__3938403906223890231_38400 at /home/niyanta/ror_udemy_course/finance-tracker/app/views/users/_result.js.erb:1)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered users/_result.html.erb (Duration: 31.4ms | Allocations: 3996)
+  Rendered users/_result.js.erb (Duration: 35.4ms | Allocations: 4503)
+Completed 500 Internal Server Error in 7047ms (ActiveRecord: 0.5ms | Allocations: 8449)
+
+
+  
+ActionView::Template::Error (undefined method `can_track_stock?' for #<User:0x000055dbf922aeb8>
+Did you mean?  can_track_count?):
+     7:     <strong>Symbol: </strong><%= @stock.ticker %>
+     8:     <strong>Name: </strong><%= @stock.name %>
+     9:     <strong>Price: </strong><%= @stock.last_price %>
+    10:     <% if current_user.can_track_stock?(@stock.ticker) %>
+    11:       <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker), method: :post, class: "btn btn-xs btn-success"%>
+    12:     <% else %>
+    13:       <span class="badge badge-secondary">
+  
+app/views/users/_result.html.erb:10
+app/views/users/_result.js.erb:1
+app/controllers/stocks_controller.rb:8:in `block (2 levels) in search'
+app/controllers/stocks_controller.rb:7:in `search'
+Started GET "/search_stock?stock=GOOG&button=" for ::1 at 2021-11-02 17:07:30 +0530
+Processing by StocksController#search as JS
+  Parameters: {"stock"=>"GOOG", "button"=>""}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered users/_result.html.erb (Duration: 35.0ms | Allocations: 3618)
+  Rendered users/_result.js.erb (Duration: 35.6ms | Allocations: 3712)
+Completed 500 Internal Server Error in 3293ms (ActiveRecord: 0.7ms | Allocations: 7415)
+
+
+  
+ActionView::Template::Error (undefined method `can_track_stock?' for #<User:0x000055dbf856ca28>
+Did you mean?  can_track_count?):
+     7:     <strong>Symbol: </strong><%= @stock.ticker %>
+     8:     <strong>Name: </strong><%= @stock.name %>
+     9:     <strong>Price: </strong><%= @stock.last_price %>
+    10:     <% if current_user.can_track_stock?(@stock.ticker) %>
+    11:       <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker), method: :post, class: "btn btn-xs btn-success"%>
+    12:     <% else %>
+    13:       <span class="badge badge-secondary">
+  
+app/views/users/_result.html.erb:10
+app/views/users/_result.js.erb:1
+app/controllers/stocks_controller.rb:8:in `block (2 levels) in search'
+app/controllers/stocks_controller.rb:7:in `search'
+Started GET "/search_stock?stock=GOOG&button=" for ::1 at 2021-11-02 17:07:34 +0530
+Processing by StocksController#search as JS
+  Parameters: {"stock"=>"GOOG", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered users/_result.html.erb (Duration: 23.5ms | Allocations: 3619)
+  Rendered users/_result.js.erb (Duration: 24.0ms | Allocations: 3713)
+Completed 500 Internal Server Error in 2275ms (ActiveRecord: 0.2ms | Allocations: 7356)
+
+
+  
+ActionView::Template::Error (undefined method `can_track_stock?' for #<User:0x00007fa34c023a90>
+Did you mean?  can_track_count?):
+     7:     <strong>Symbol: </strong><%= @stock.ticker %>
+     8:     <strong>Name: </strong><%= @stock.name %>
+     9:     <strong>Price: </strong><%= @stock.last_price %>
+    10:     <% if current_user.can_track_stock?(@stock.ticker) %>
+    11:       <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker), method: :post, class: "btn btn-xs btn-success"%>
+    12:     <% else %>
+    13:       <span class="badge badge-secondary">
+  
+app/views/users/_result.html.erb:10
+app/views/users/_result.js.erb:1
+app/controllers/stocks_controller.rb:8:in `block (2 levels) in search'
+app/controllers/stocks_controller.rb:7:in `search'
+Started GET "/search_stock?stock=GOOG&button=" for ::1 at 2021-11-02 17:07:57 +0530
+Processing by StocksController#search as HTML
+  Parameters: {"stock"=>"GOOG", "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 406 Not Acceptable in 2260ms (ActiveRecord: 0.3ms | Allocations: 3882)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/stocks_controller.rb:7:in `search'
+Started GET "/search_stock?stock=NFLX&button=" for ::1 at 2021-11-02 17:09:30 +0530
+Processing by StocksController#search as JS
+  Parameters: {"stock"=>"NFLX", "button"=>""}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered users/_result.html.erb (Duration: 36.1ms | Allocations: 3618)
+  Rendered users/_result.js.erb (Duration: 36.7ms | Allocations: 3712)
+Completed 500 Internal Server Error in 2287ms (ActiveRecord: 0.9ms | Allocations: 7336)
+
+
+  
+ActionView::Template::Error (undefined method `can_track_stock?' for #<User:0x00007fa338326f80>
+Did you mean?  can_track_count?):
+     7:     <strong>Symbol: </strong><%= @stock.ticker %>
+     8:     <strong>Name: </strong><%= @stock.name %>
+     9:     <strong>Price: </strong><%= @stock.last_price %>
+    10:     <% if current_user.can_track_stock?(@stock.ticker) %>
+    11:       <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker), method: :post, class: "btn btn-xs btn-success"%>
+    12:     <% else %>
+    13:       <span class="badge badge-secondary">
+  
+app/views/users/_result.html.erb:10
+app/views/users/_result.js.erb:1
+app/controllers/stocks_controller.rb:8:in `block (2 levels) in search'
+app/controllers/stocks_controller.rb:7:in `search'
+Started GET "/my_portfolio" for ::1 at 2021-11-02 17:10:00 +0530
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/views/users/my_portfolio.html.erb:22
+  Rendered stocks/_stock_listing.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 14.0ms | Allocations: 5465)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 94)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 9696)
+Completed 200 OK in 40ms (Views: 20.4ms | ActiveRecord: 2.9ms | Allocations: 17697)
+
+
+Started GET "/search_stock?stock=MSFT&button=" for ::1 at 2021-11-02 17:10:06 +0530
+Processing by StocksController#search as JS
+  Parameters: {"stock"=>"MSFT", "button"=>""}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 24)
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1[0m
+  ↳ app/models/user.rb:17:in `under_stock_limit?'
+  [1m[36mStock Load (1.0ms)[0m  [1m[34mSELECT `stocks`.* FROM `stocks` WHERE `stocks`.`ticker` = 'MSFT' ORDER BY `stocks`.`id` ASC LIMIT 1[0m
+  ↳ app/models/stock.rb:20:in `check_db'
+  [1m[36mStock Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM `stocks` INNER JOIN `user_stocks` ON `stocks`.`id` = `user_stocks`.`stock_id` WHERE `user_stocks`.`user_id` = 1 AND `stocks`.`id` = 5 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `stock_already_tracked?'
+  Rendered users/_result.html.erb (Duration: 30.3ms | Allocations: 2924)
+  Rendered users/_result.js.erb (Duration: 31.4ms | Allocations: 3050)
+Completed 200 OK in 2247ms (Views: 26.0ms | ActiveRecord: 8.8ms | Allocations: 6825)
+
+
